@@ -71,8 +71,10 @@ class ComplexNumber:
     
     def magnitude(self,other):
         """
-        Args:
-        Return:
+        Calculate the magnitude value of the complex number.
+
+        Returns:
+            float: The magnitude of the complex number.
         """
         return (self.real**2 + self.imag**2)**0.5
 
@@ -84,8 +86,8 @@ class ComplexNumber:
         The angle of a complex number c = a + bj is denoted ̸ c:
                     ̸ c = arctan b/a.
                     
-        Args:
         Return:
+            float: The phase of the complex number in radians.
         """
         return math.atan2(self.imag, self.real)
 
@@ -93,8 +95,7 @@ class ComplexNumber:
         """
         Position on the plane 
         """
-        pos = ""
-        return pos  
+        pass
 
     def conjugate(self,other):
         """
