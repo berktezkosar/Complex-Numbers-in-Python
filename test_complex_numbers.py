@@ -1,5 +1,6 @@
 import math
 import unittest
+import subprocess
 import ComplexNumber
 
 class TestComplexNumber(unittest.TestCase):
@@ -107,3 +108,16 @@ class TestComplexNumber(unittest.TestCase):
         """
         t = ComplexNumber(1, 1)
         self.assertAlmostEqual(t.phase(), math.pi/4)
+
+    def main(self):
+        # run the test suite
+        runner = unittest.TextTestRunner()
+        result = runner.run(unittest.makeSuite(TestComplexNumber))
+
+        # save the test results to a file
+        with open('test_results.txt', 'w') as f:
+            subprocess.call(['python', '-m', 'unittest', '-v', 'test_complex_number'], stdout=f)
+
+if __name__ == '__main__':
+    test = TestComplexNumber()
+    test.main()
